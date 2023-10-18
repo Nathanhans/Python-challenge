@@ -12,26 +12,14 @@ import csv
 
 csvpath = os.path.join('Resources', 'budget_data.csv')
 
-
-# # Method 1: Plain Reading of CSV files
-# with open(csvpath, 'r') as file_handler:
-#     lines = file_handler.read()
-#     print(lines)
-#     print(type(lines))
-
-
 # Read csv file and calculate necessary information from file
-
 with open(csvpath) as csvfile:
 
     # CSV reader specifies delimiter and variable that holds contents
     csvreader = csv.reader(csvfile, delimiter=',')
 
-    #print(csvreader)
-
     # Read the header row first (skip this step if there is no header)
     csv_header = next(csvreader)
-    print(f"CSV Header: {csv_header}")
 
     Total_months = 0
     Total = 0
@@ -40,6 +28,7 @@ with open(csvpath) as csvfile:
     Max_increase_month = 0
     Max_decrease_month = 0
     Average_change = 0
+
     # Read each row of data after the header
     for row in csvreader:
         print(row)
@@ -59,8 +48,10 @@ with open(csvpath) as csvfile:
             Max_increase_month = (row[0])
         else:
             Max_increase = Max_increase    
+    #calculate average change
     Average_change = Total/Total_months
     
+    #print requirements
     print(f"Financial Analysis \n---------------------")
     print(f"Total Months: {Total_months}")
     print(f"Total: ${Total}")

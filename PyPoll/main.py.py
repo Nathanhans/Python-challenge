@@ -1,4 +1,4 @@
-#### Nathan Hanns
+#### Nathan Hans
 #### Python challenge
 
 #PyPoll
@@ -11,14 +11,6 @@ import os
 import csv
 
 csvpath = os.path.join('Resources', 'election_data.csv')
-
-
-# # Method 1: Plain Reading of CSV files
-# with open(csvpath, 'r') as file_handler:
-#     lines = file_handler.read()
-#     print(lines)
-#     print(type(lines))
-
 
 # Read csv file and calculate necessary information from file
 
@@ -40,11 +32,8 @@ with open(csvpath) as csvfile:
     Other_votes = 0
     # Read each row of data after the header
     for row in csvreader:
-        #print(row)
-        #print(row[2])
-        #increment votes
+        #find total votes
         Total_votes = Total_votes+1
-        #add to total
         #conditional to determine votes by candidate
         if row[2] == 'Charles Casper Stockham':
             Charles_votes = Charles_votes + 1
@@ -55,6 +44,7 @@ with open(csvpath) as csvfile:
         else:
             Other_votes = Other_votes + 1
         
+        #calculated percentages of total
         Charles_pct = Charles_votes/Total_votes
         Diana_pct = Diana_votes/Total_votes
         Raymon_pct = Raymon_votes/Total_votes
@@ -66,6 +56,7 @@ with open(csvpath) as csvfile:
         else:
             winner = "Raymon Anthony Doane"
     
+    #print requirements
     print("Election Results \n")
     print("---------------")
     print(f'Total Votes: {Total_votes}')
