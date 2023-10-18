@@ -72,8 +72,8 @@ with open(csvpath) as csvfile:
 output_path = os.path.join('output', 'new.csv')     
 
           
-     # Open the file using "write" mode. Specify the variable to hold the contents
-with open(output_path, 'w') as csvfile:
+     # Open the file using "write" mode. Specify the variable to hold the contents.  Had to add newline = '' to avoid skipped rows
+with open(output_path, 'w', newline = '') as csvfile:
 
     # Initialize csv.writer
     csvwriter = csv.writer(csvfile, delimiter=',')
