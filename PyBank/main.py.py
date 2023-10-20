@@ -48,8 +48,6 @@ with open(csvpath) as csvfile:
         #calculate cumlative differences
         Cml_difference = Cml_difference + Difference
         
-
-        
         #add up total
         Total = Total + int(row[1])
         #conditional to determine min and max
