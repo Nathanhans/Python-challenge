@@ -6,11 +6,10 @@
 #Import the os module to create file paths
 
 import os
-
-# Module for reading CSV files
 import csv
+from pathlib import Path
 
-csvpath = os.path.join('Resources', 'budget_data.csv')
+csvpath = os.path.join('../PyBank/Resources/budget_data.csv')
 
 # Read csv file and calculate necessary information from file
 with open(csvpath) as csvfile:

@@ -1,16 +1,14 @@
 #### Nathan Hans
 #### Python challenge
 
-#PyPoll
-
-#Import the os module to create file paths
+#Import the required libraries
 
 import os
-
-# Module for reading CSV files
 import csv
+from pathlib import Path
 
-csvpath = os.path.join('Resources', 'election_data.csv')
+
+csvpath = os.path.join('../PyPoll/Resources/election_data.csv')
 
 # Read csv file and calculate necessary information from file
 
